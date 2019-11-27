@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dabbd637-82c0-44a8-b833-3c664c1aeabc" name="Default Changelist" comment="" />
+    <list default="true" id="dabbd637-82c0-44a8-b833-3c664c1aeabc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Authorizatoin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Candidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/Candidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Elector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/Elector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Main$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Main$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Registration$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Registration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Voting$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/Voting$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Voting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/Voting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/code/Authorizatoin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/code/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/code/Registration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/code/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/code/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/code/Voting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/code/Voting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/code/VotingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/code/VotingSystem.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +50,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1U63Oh6Dj4J0nL5iJ4EcbzTQj0X" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -75,15 +118,17 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/code/VotingSystem.java</url>
-          <line>387</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

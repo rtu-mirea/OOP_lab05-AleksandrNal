@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Voting {
     private String title;
-    private List<Candidate> candidats;
+    private ArrayList<Candidate> candidats;
 
     Voting(String title){
         this.title = title;
@@ -50,5 +50,9 @@ public class Voting {
 
     public Candidate getCandidat(int i) {
         return candidats.get(i);
+    }
+
+    public ArrayList<Candidate> getCandidats() {
+        return candidats;
     }
 }

@@ -1,18 +1,21 @@
 package com.code;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 
 public class VotingSystem {
-    private static List<User> users;
+    private static ArrayList<User> users;
     private static Voting currentVoting = null;
     private static User currentUser;
-    private static List<Elector> currentElectors = null;
+    private static ArrayList<Elector> currentElectors = null;
 
     public static User addUser(String name, String login, String password){
         return new Elector(name, login, password);
@@ -37,14 +40,17 @@ public class VotingSystem {
     }
 
     public static void Menu(){
-        JFrame frame = new JFrame("Authorization");
+        JFrame frame = new JFrame("Menu");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 100);
+        frame.setSize(300, 110);
 
         JPanel panel = new JPanel();
         JButton b1 = new JButton("Регистрация");
         JButton b2 = new JButton("Вход");
         JButton b3 = new JButton("Выход");
+        JButton b4 = new JButton("Открыть");
+        JButton b5 = new JButton("Сохранить");
+
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -68,9 +74,51 @@ public class VotingSystem {
             }
         });
 
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+
+                int returnValue = fc.showOpenDialog(null);
+                // int returnValue = jfc.showSaveDialog(null);
+
+                if (returnValue == JFileChooser.APPROVE_OPTION) {
+                    File selectedFile = fc.getSelectedFile();
+                    ClassSeriyazableFile csf = new ClassSeriyazableFile(selectedFile.getAbsolutePath());
+                    try {
+                        users = csf.readfile();
+                    }catch (Exception ex){
+                        JOptionPane.showMessageDialog(null, "Ошибка");
+                    }
+                }
+            }
+        });
+
+        b5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+
+                int returnValue = fc.showOpenDialog(null);
+                // int returnValue = jfc.showSaveDialog(null);
+
+                if (returnValue == JFileChooser.APPROVE_OPTION) {
+                    File selectedFile = fc.getSelectedFile();
+                    ClassSeriyazableFile csf = new ClassSeriyazableFile(selectedFile.getAbsolutePath());
+                    try {
+                        csf.collection(users);
+                    }catch (Exception ex){
+                        JOptionPane.showMessageDialog(null, "Ошибка");
+                    }
+                }
+            }
+        });
+
         panel.add(b1);
         panel.add(b2);
         panel.add(b3);
+        panel.add(b4);
+        panel.add(b5);
         frame.getContentPane().add(panel);
 
         frame.setVisible(true);
@@ -107,12 +155,11 @@ public class VotingSystem {
             @Override
             public void actionPerformed(ActionEvent e) {
                 boolean repeat = false;
-                System.out.println("enter name login password");
                 String name = t1.getText();
                 String login = t2.getText();
                 for (User user : users){
                     if (user.getLogin().compareTo(login) == 0){
-                        System.out.println("this login already taken");
+                        JOptionPane.showMessageDialog(null, "Этот логин уже заният");
                         repeat = true;
                         break;
                     }
@@ -162,7 +209,6 @@ public class VotingSystem {
             @Override
             public void actionPerformed(ActionEvent e) {
                 currentUser = null;
-                System.out.println("enter login and password");
                 String login = t1.getText();
                 String password = t2.getText();
                 for (User user : users){
@@ -171,7 +217,7 @@ public class VotingSystem {
                     }
                 }
                 if (currentUser == null){
-                    System.out.println("invalid");
+                    JOptionPane.showMessageDialog(null, "Неверно введен логин или пароль");
                     frame.dispose();
                     Menu();
                     return;
@@ -199,7 +245,7 @@ public class VotingSystem {
     public static void Admin(){
         JFrame frame = new JFrame("Admin");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 200);
+        frame.setSize(300, 400);
 
         JPanel panel = new JPanel();
         JTextField t1 = new JTextField(10);
@@ -208,6 +254,20 @@ public class VotingSystem {
         JButton b2 = new JButton("Добавить кандидата");
         JButton b3 = new JButton("Подвести итоги");
         JButton b4 = new JButton("Выход");
+        String[] tables = {"Имя", "Логин", "Пароль"};
+        String[][] data = new String[users.size()][3];
+        int i = 0;
+        for (User u : users){
+            data[i][0] = u.getName();
+            data[i][1] = u.getLogin();
+            data[i][2] = u.getPassword();
+            i++;
+        }
+        JTable t = new JTable(data, tables);
+        t.setPreferredScrollableViewportSize(t.getPreferredSize());
+        t.setFillsViewportHeight(true);
+        JScrollPane sp = new JScrollPane(t);
+
 
         b1.addActionListener(new ActionListener() {
             @Override
@@ -222,7 +282,7 @@ public class VotingSystem {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (currentVoting == null){
-                    System.out.println("Voting is not created yet");
+                    JOptionPane.showMessageDialog(null, "Голосование ещё не создано");
                     return;
                 }
                 String name = t2.getText();
@@ -230,7 +290,7 @@ public class VotingSystem {
                     currentVoting.add_Candidate(name);
                     return;
                 }
-                System.out.println("this name is already taken");
+                JOptionPane.showMessageDialog(null, "Это имя уже занято");
             }
         });
 
@@ -238,15 +298,16 @@ public class VotingSystem {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (currentVoting == null){
-                    System.out.println("Voting is not created yet");
+                    JOptionPane.showMessageDialog(null, "Голосование ещё не создано");
                     return;
                 }
                 currentVoting.sort();
-                System.out.println("Results of voting \"" + currentVoting.getTitle() + "\"");
+                StringBuilder s = new StringBuilder("Результат голосования \"" + currentVoting.getTitle() + "\"");
                 for (int i = 0; i < currentVoting.getList().size(); i++){
                     Candidate candidate = currentVoting.getCandidat(i);
-                    System.out.println(i+1 + ") " + candidate.getName() + " with " + candidate.getVoices() + " voices");
+                    s.append("\n").append(i + 1).append(") ").append(candidate.getName()).append(" с ").append(candidate.getVoices()).append(" голосами");
                 }
+                JOptionPane.showMessageDialog(null, s.toString());
                 currentVoting = null;
                 currentElectors = null;
             }
@@ -266,6 +327,7 @@ public class VotingSystem {
         panel.add(b2);
         panel.add(b3);
         panel.add(b4);
+        panel.add(sp);
         frame.getContentPane().add(panel);
         frame.setVisible(true);
     }
@@ -276,16 +338,28 @@ public class VotingSystem {
         frame.setSize(300, 150);
 
         JPanel panel = new JPanel();
-        JTextField t1 = new JTextField(10);
         JButton b1 = new JButton("проголосовать");
         JButton b2 = new JButton("Выход");
+
+        String[] cands = {"Голосование ещё не создано"};
+        if (currentElectors != null){
+            ArrayList<Candidate> names = currentVoting.getCandidats();
+            cands = new String[names.size()];
+            int i = 0;
+            for (Candidate c : names){
+                cands[i] = c.getName();
+                i++;
+            }
+        }
+
+        JComboBox com = new JComboBox(cands);
 
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int index = 0;
                 if (currentElectors == null){
-                    System.out.println("there is no elections right now");
+                    JOptionPane.showMessageDialog(null, "Голосование ещё не создано");
                     return;
                 }
                 if (!is_currentElector(currentUser.getLogin(),currentUser.getPassword())) {
@@ -300,17 +374,17 @@ public class VotingSystem {
                     }
                 }
                 if (!currentElectors.get(index).isVoted()) {
-                    System.out.println("enter name of candidate");
-                    String name = t1.getText();
+
+                    String name = Objects.requireNonNull(com.getSelectedItem()).toString();
                     Candidate candidate = currentVoting.find_Candidate(name);
                     if (candidate == null) {
-                        System.out.println("invalid");
+                        JOptionPane.showMessageDialog(null, "Такого кандидата нет");
                         return;
                     }
                     candidate.addVoices();
                     currentElectors.get(index).vote();
                 }else
-                    System.out.println("Voted already");
+                    JOptionPane.showMessageDialog(null, "Уже проголосовал");
             }
         });
 
@@ -322,174 +396,20 @@ public class VotingSystem {
             }
         });
 
-
-        panel.add(t1);
+        panel.add(com);
         panel.add(b1);
         panel.add(b2);
+
         frame.getContentPane().add(panel);
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
         users = new ArrayList<User>();
-        boolean upper = true;
-        Scanner in = new Scanner(System.in);
         Admin admin;
         admin = new Admin("admin", "admin", "admin");
         users.add(admin);
+
         Menu();
-
-
-        /* while (upper){
-            System.out.println("1)sing up 2)sing in 3)exit");
-            int check = 0;
-            try {
-                check = Integer.parseInt(in.next());
-            }catch (Exception e){
-                System.out.println("invalid");
-                check = 0;
-            }
-            switch(check){
-                case 1:
-                    boolean repeat = false;
-                    System.out.println("enter name login password");
-                    String name = in.next();
-                    String login = in.next();
-                    for (User user : users){
-                        if (user.getLogin().compareTo(login) == 0){
-                            System.out.println("this login already taken");
-                            repeat = true;
-                            break;
-                        }
-                    }
-                    if(repeat)
-                        break;
-                    String password = in.next();
-                    users.add(addUser(name, login, password));
-                    break;
-
-                case 2:
-                    currentUser = null;
-                    System.out.println("enter login and password");
-                    login = in.next();
-                    password = in.next();
-                    for (User user : users){
-                        if (user.enter(login, password)){
-                            currentUser = user;
-                        }
-                    }
-                    if (currentUser == null){
-                        System.out.println("invalid");
-                        break;
-                    }
-
-                    boolean lower = true;
-                    if (currentUser.getClass().getName().compareTo("com.code.Admin") == 0){
-                        while(lower){
-                            System.out.println("1)new voting 2)add candidate 3)result 4)sing out");
-                            check = 0;
-                            try {
-                                check = Integer.parseInt(in.next());
-                            }catch (Exception e){
-                                System.out.println("invalid");
-                                check = 0;
-                            }
-                            switch (check){
-                                case 1:
-                                    System.out.println("enter the title of voting");
-                                    String title = in.next();
-                                    currentVoting = new Voting(title);
-                                    currentElectors = new ArrayList<Elector>();
-                                    break;
-                                case 2:
-                                    if (currentVoting == null){
-                                        System.out.println("Voting is not created yet");
-                                        break;
-                                    }
-                                    System.out.println("enter candidates name");
-                                    repeat = false;
-                                    name = in.next();
-                                    if (currentVoting.find_Candidate(name) == null) {
-                                        currentVoting.add_Candidate(name);
-                                        break;
-                                    }
-                                    System.out.println("this name is already taken");
-                                    break;
-                                case 3:
-                                    if (currentVoting == null){
-                                        System.out.println("Voting is not created yet");
-                                        break;
-                                    }
-                                    currentVoting.sort();
-                                    System.out.println("Results of voting \"" + currentVoting.getTitle() + "\"");
-                                    for (int i = 0; i < currentVoting.getList().size(); i++){
-                                        Candidate candidate = currentVoting.getCandidat(i);
-                                        System.out.println(i+1 + ") " + candidate.getName() + " with " + candidate.getVoices() + " voices");
-                                    }
-                                    currentVoting = null;
-                                    currentElectors = null;
-                                    break;
-                                case 4:
-                                    lower = false;
-                            }
-                        }
-                    }else{
-                        while (lower) {
-                            System.out.println("1)vote 2)sing out");
-                            check = 0;
-                            try {
-                                check = Integer.parseInt(in.next());
-                            }catch (Exception e){
-                                System.out.println("invalid");
-                                check = 0;
-                            }
-                            switch (check) {
-                                case 1:
-                                    int index = 0;
-                                    if (currentElectors == null){
-                                        System.out.println("there is no elections right now");
-                                        break;
-                                    }
-                                    if (!is_currentElector(currentUser.getLogin(),currentUser.getPassword())) {
-                                        currentElectors.add(new Elector(currentUser.getName(), currentUser.getLogin(), currentUser.getPassword()));
-                                        index = currentElectors.size() - 1;
-                                    }else{
-                                        for (int i = 0; i < currentElectors.size(); i++){
-                                            if (currentUser.getLogin().compareTo(currentElectors.get(i).getLogin()) == 0) {
-                                                index = i;
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    if (!currentElectors.get(index).isVoted()) {
-                                        System.out.println("enter name of candidate");
-                                        name = in.next();
-                                        Candidate candidate = currentVoting.find_Candidate(name);
-                                        if (candidate == null) {
-                                            System.out.println("invalid");
-                                            break;
-                                        }
-                                        candidate.addVoices();
-                                        currentElectors.get(index).vote();
-                                    }else
-                                        System.out.println("Voted already");
-                                    break;
-
-                                case 2:
-                                    lower = false;
-                                    break;
-                            }
-                        }
-                    }
-                    break;
-
-                case 3:
-                    upper = false;
-                    break;
-            }
-        }
-
-         */
-
     }
 }

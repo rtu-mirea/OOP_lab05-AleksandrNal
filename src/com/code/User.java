@@ -1,10 +1,18 @@
 package com.code;
 
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String name;
     private String login;
     private String password;
+
+    User(){
+        this.name = "";
+        this.login = "";
+        this.password = "";
+    }
 
     User(String name, String login, String password){
         this.name = name;
