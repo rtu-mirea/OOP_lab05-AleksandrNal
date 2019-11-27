@@ -2,6 +2,7 @@ package com.code;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -41,15 +42,31 @@ public class VotingSystem {
 
     public static void Menu(){
         JFrame frame = new JFrame("Menu");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().setBackground(Color.YELLOW);
         frame.setSize(300, 110);
 
         JPanel panel = new JPanel();
+        panel.setBackground(Color.GRAY);
         JButton b1 = new JButton("Регистрация");
+        b1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b1.setForeground(Color.blue);
+        b1.setAlignmentX(Component.CENTER_ALIGNMENT);
         JButton b2 = new JButton("Вход");
+        b2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b2.setForeground(Color.blue);
+        b2.setAlignmentX(Component.CENTER_ALIGNMENT);
         JButton b3 = new JButton("Выход");
+        b3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b3.setForeground(Color.blue);
+        b3.setAlignmentX(Component.CENTER_ALIGNMENT);
         JButton b4 = new JButton("Открыть");
+        b4.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b4.setForeground(Color.blue);
+        b4.setAlignmentX(Component.CENTER_ALIGNMENT);
         JButton b5 = new JButton("Сохранить");
+        b5.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b5.setForeground(Color.blue);
+        b5.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         b1.addActionListener(new ActionListener() {
             @Override
@@ -130,27 +147,50 @@ public class VotingSystem {
         frame.setSize(300, 200);
 
         JPanel panel = new JPanel();
+        panel.setBackground(Color.GRAY);
 
         JPanel p1 = new JPanel();
         JLabel l1 = new JLabel("Имя");
+        l1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        l1.setForeground(Color.blue);
+        l1.setAlignmentX(Component.LEFT_ALIGNMENT);
         JTextField t1 = new JTextField(10);
+        t1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        t1.setForeground(Color.blue);
+        t1.setAlignmentX(Component.LEFT_ALIGNMENT);
         p1.add(l1);
         p1.add(t1);
 
         JPanel p2 = new JPanel();
         JLabel l2 = new JLabel("Логин");
+        l2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        l2.setForeground(Color.blue);
+        l2.setAlignmentX(Component.LEFT_ALIGNMENT);
         JTextField t2 = new JTextField(10);
+        t2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        t2.setForeground(Color.blue);
+        t2.setAlignmentX(Component.LEFT_ALIGNMENT);
         p2.add(l2);
         p2.add(t2);
 
         JPanel p3 = new JPanel();
         JLabel l3 = new JLabel("Пароль");
+        l3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        l3.setForeground(Color.blue);
+        l3.setAlignmentX(Component.LEFT_ALIGNMENT);
         JTextField t3 = new JTextField(10);
+        t3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        t3.setForeground(Color.blue);
+        t3.setAlignmentX(Component.LEFT_ALIGNMENT);
         p3.add(l3);
         p3.add(t3);
 
         JPanel p4 = new JPanel();
         JButton b1 = new JButton("Зарегистрироваться");
+        b1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b1.setForeground(Color.blue);
+        b1.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -190,21 +230,38 @@ public class VotingSystem {
         frame.setSize(250, 200);
 
         JPanel panel = new JPanel();
+        panel.setBackground(Color.GRAY);
 
         JPanel p1 = new JPanel();
         JLabel l1 = new JLabel("Логин");
+        l1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        l1.setForeground(Color.blue);
+        l1.setAlignmentX(Component.LEFT_ALIGNMENT);
         JTextField t1 = new JTextField(10);
+        t1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        t1.setForeground(Color.blue);
+        t1.setAlignmentX(Component.LEFT_ALIGNMENT);
         p1.add(l1);
         p1.add(t1);
 
         JPanel p2 = new JPanel();
         JLabel l2 = new JLabel("Пароль");
+        l2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        l2.setForeground(Color.blue);
+        l2.setAlignmentX(Component.LEFT_ALIGNMENT);
         JTextField t2 = new JTextField(10);
+        t2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        t2.setForeground(Color.blue);
+        t2.setAlignmentX(Component.LEFT_ALIGNMENT);
         p2.add(l2);
         p2.add(t2);
 
         JPanel p3 = new JPanel();
         JButton b1 = new JButton("Войти");
+        b1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b1.setForeground(Color.blue);
+        b1.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -248,12 +305,31 @@ public class VotingSystem {
         frame.setSize(300, 400);
 
         JPanel panel = new JPanel();
+        panel.setBackground(Color.GRAY);
         JTextField t1 = new JTextField(10);
+        t1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        t1.setForeground(Color.blue);
+        t1.setAlignmentX(Component.LEFT_ALIGNMENT);
         JButton b1 = new JButton("Новое голосование");
+        b1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b1.setForeground(Color.blue);
+        b1.setAlignmentX(Component.CENTER_ALIGNMENT);
         JTextField t2 = new JTextField(10);
+        t2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        t2.setForeground(Color.blue);
+        t2.setAlignmentX(Component.LEFT_ALIGNMENT);
         JButton b2 = new JButton("Добавить кандидата");
+        b2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b2.setForeground(Color.blue);
+        b2.setAlignmentX(Component.CENTER_ALIGNMENT);
         JButton b3 = new JButton("Подвести итоги");
+        b3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b3.setForeground(Color.blue);
+        b3.setAlignmentX(Component.CENTER_ALIGNMENT);
         JButton b4 = new JButton("Выход");
+        b4.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b4.setForeground(Color.blue);
+        b4.setAlignmentX(Component.CENTER_ALIGNMENT);
         String[] tables = {"Имя", "Логин", "Пароль"};
         String[][] data = new String[users.size()][3];
         int i = 0;
@@ -264,6 +340,9 @@ public class VotingSystem {
             i++;
         }
         JTable t = new JTable(data, tables);
+        t.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        t.setForeground(Color.blue);
+        t.setAlignmentX(Component.LEFT_ALIGNMENT);
         t.setPreferredScrollableViewportSize(t.getPreferredSize());
         t.setFillsViewportHeight(true);
         JScrollPane sp = new JScrollPane(t);
@@ -338,8 +417,15 @@ public class VotingSystem {
         frame.setSize(300, 150);
 
         JPanel panel = new JPanel();
+        panel.setBackground(Color.GRAY);
         JButton b1 = new JButton("проголосовать");
+        b1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b1.setForeground(Color.blue);
+        b1.setAlignmentX(Component.CENTER_ALIGNMENT);
         JButton b2 = new JButton("Выход");
+        b2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        b2.setForeground(Color.blue);
+        b2.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         String[] cands = {"Голосование ещё не создано"};
         if (currentElectors != null){
@@ -353,7 +439,9 @@ public class VotingSystem {
         }
 
         JComboBox com = new JComboBox(cands);
-
+        com.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        com.setForeground(Color.blue);
+        com.setAlignmentX(Component.LEFT_ALIGNMENT);
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
