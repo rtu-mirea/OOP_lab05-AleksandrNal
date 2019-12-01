@@ -17,6 +17,14 @@ public class Candidate {
         return name;
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setVoices(int voices) {
+        this.voices = voices;
+    }
+
     public int getVoices() {
         return voices;
     }
