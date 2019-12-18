@@ -2,8 +2,6 @@ package com.code;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Scanner;
 
 public class ClassSeriyazableFile implements Serializable{
 

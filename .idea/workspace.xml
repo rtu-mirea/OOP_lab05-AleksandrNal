@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dabbd637-82c0-44a8-b833-3c664c1aeabc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/code/ChangeCandidate.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/code/ChangeCandidate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/code/ChangeUser.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/code/ChangeUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/Candidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/Candidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab5/com/code/VotingSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/code/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/code/Candidate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/code/VotingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/code/VotingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Лаб 5 и материалы по GUI/~$бораторная работа 5. Графический пользовательский интерфейс.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/code/ClassSeriyazableFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/code/ClassSeriyazableFile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="130" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="301" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="204" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
